@@ -72,9 +72,31 @@ git show nobel-2021
 ```{bash,warning=FALSE,echo=TRUE,eval=FALSE,message=FALSE}
 #creat a new repository named recipe first, and then
 #or push an existing repository from the command line
-git remote add origin git@github.com:Ruby-luo-0309/recipe.git
+git remote add Edit1 git@github.com:Ruby-luo-0309/recipe.git
 git branch -M main
 git push -u origin main
 #dd
 ```
+
+# Step8: git pull & push
+```{bash,warning=FALSE,echo=TRUE,eval=FALSE,message=FALSE}
+git clone git@github.com:Ruby-luo-0309/recipe.git recipe
+cd recipe
+git log #origin/main, origin/HEAD
+cat .git/HEAD #check local branch status
+cat .git/refs/remotes/origin/HEAD #check remote branch status
+git remote show origin #check local status and remote status - main pushes to main (up to date) #that means both local and remote is lastest  - local out of date
+
+git fetch origin #pull all update to local
+git merge origin/main #merge updata to local or "git merge FETCH_HEAD"
+ls .git
+git log -p FETCH_HEAD
+git log
+
+git pull #git pull = git fetch + git merge
+
+#renew data
+git push
+```
+
 
